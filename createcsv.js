@@ -54,6 +54,6 @@ const seed = (count) => {
   console.log('csv write success')
 }
 
-seed(1000000);
+seed(2000000);
 
 //node --max-old-space-size=2048 /home/jonathan/Documents/Repos/jb-component/server/seed.js
