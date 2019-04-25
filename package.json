@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/ten-7/jb-component-db#readme",
   "dependencies": {
+    "file-system": "^2.2.2",
     "pg": "^7.10.0"
   }
 }

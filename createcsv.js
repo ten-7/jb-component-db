@@ -1,4 +1,4 @@
-const fs = require('fs');
+const fs = require('file-system');
 
 const batch = [
   {
@@ -46,10 +46,12 @@ const batch = [
 const seed = (count) => {
   const writePath = (__dirname, `./outputpg.csv`);
   const stream = fs.createWriteStream(writePath);
-  // stream.write('_id,productId,name,description,tag,price,images\n')
-  for (let i = 1; i <= count; i++) {
-    const r = Math.floor(Math.random()*4);
-    stream.write(`${i},${batch[r].productId},"${batch[r].name}","${batch[r].description}","${batch[r].tag}",${batch[r].price},"${batch[r].images}"\n`)
+  stream.write('_id,productId,name,description,tag,price,images\n')
+  for(let j = 0; j < 5; j++) {
+    for (let i = 1; i <= count; i++) {
+      const r = Math.floor(Math.random()*4);
+      stream.write(`${(j*count)+i},${batch[r].productId},"${batch[r].name}","${batch[r].description}","${batch[r].tag}",${batch[r].price},"${batch[r].images}"\n`)
+    }
   }
   console.log('csv write success')
 }
